@@ -83,15 +83,15 @@ public:
 		}
 	}
 
-	void preorder(Node* ptr) {
+	void postorder(Node* ptr) { //Performs the postorder traversal of the tree
 		if (ROOT == NULL) {
 			cout << "Tree is emprty" << endl;
 			return;
 		}
 		if (ptr != NULL) {
+			postorder(ptr->leftchild);
+			postorder(ptr->rightchild);
 			cout << ptr->info << " ";
-			preorder(ptr->leftchild);
-			preorder(ptr->rightchild);
 		}
 	}
 };
